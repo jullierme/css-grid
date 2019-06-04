@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nome de linhas</title>
+  </head>
+  <style>
+    @media (min-width: 500px) {
+      .wrapper {
+        display: grid;
+        grid-template-columns: [site-start] 1fr [content-start] repeat(4, 1fr) [site-end];
+        grid-template-rows: [site-top] 200px [content-top] 200px [content-bottom] 200px [site-bottom];
+        grid-auto-rows: 200px;
+        grid-gap: 0.5rem;
+      }
+    }
+
+    header,
+    footer {
+      grid-column: site;
+    }
+
+    main {
+      grid-column: content;
+    }
+
+    aside {
+      grid-column: site-start / content-start;
+      grid-row: content-top / content-bottom;
+    }
+
+    .wrapper > * {
+      background-color: royalblue;
+      padding: 1rem;
+    }
+
+    .wrapper > *:nth-child(even) {
+      background-color: skyblue;
+    }
+  </style>
+  <body>
+    <div class="wrapper">
+      <header>header</header>
+      <main>main</main>
+      <aside>aside</aside>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

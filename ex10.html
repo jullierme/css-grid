@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Nome de linhas</title>
+  </head>
+  <style>
+    @media (min-width: 768px) {
+      .wrapper {
+        display: grid;
+        grid-template-columns: [pizza] repeat(5, 1fr) [sorvete];
+        grid-auto-rows: 200px;
+        grid-gap: .5rem;
+      }
+    }
+
+    header,
+    footer {
+      grid-column: pizza / sorvete;
+    }
+
+    .wrapper > * {
+      background-color: royalblue;
+      padding: 1rem;
+    }
+
+    .wrapper > *:nth-child(even) {
+      background-color: skyblue;
+    }
+  </style>
+  <body>
+    <div class="wrapper">
+      <header>header</header>
+      <main>main</main>
+      <aside>aside</aside>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

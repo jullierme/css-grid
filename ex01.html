@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ex 01</title>
+  </head>
+  <style>
+    .wrapper {
+        display: grid;
+        /*grid-template-columns: 200px 200px 200px; */
+        /*grid-template-columns: minmax(200px, 40%) 200px 200px; */
+        /*grid-template-columns: repeat(3, 200px); */
+
+        /*grid-template-columns: 1fr 1fr 1fr;*/
+        grid-template-columns: repeat(4, 1fr);
+
+        /*grid-template-rows: 200px 200px 200px; */
+        /*grid-column-gap: 10px;*/
+        /*grid-row-gap: 10px;*/
+
+        grid-gap: 10px;
+
+        /*para demais linhas adicionadas depois da 3, já que apenas 3 foram especificadas*/
+        grid-auto-rows: 100px; 
+
+        /*height: 100vh;*/
+
+        /* alinhamento de conteúdo */
+        /*align-items: center;*/
+        /*justify-items: center;*/
+
+        /*place-items = align-items  e justify-items  em uma só propriedade*/
+    }
+
+    /*alinhar apenas o segundo elemento*/
+    .wrapper > div:nth-child(2) {
+        align-self: start;
+        justify-self: end;
+    }
+
+    .wrapper > div {
+      background-color: royalblue;
+      padding: 1rem;
+    }
+
+    .wrapper > div:nth-child(even) {
+      background-color: skyblue;
+    }
+  </style>
+  <body>
+    <div class="wrapper">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+      <div>10</div>
+      <div>11</div>
+      <div>12</div>
+    </div>
+  </body>
+</html>
